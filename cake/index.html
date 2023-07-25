@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 갤러리</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+        <div class="image-container">
+            <div class="image"><img src="images/cake01.jpg" alt="cake01"></div>
+            <div class="image"><img src="images/cake02.jpg" alt="cake02"></div>
+            <div class="image"><img src="images/cake03.jpg" alt="cake03"></div>
+            <div class="image"><img src="images/cake04.jpg" alt="cake04"></div>
+            <div class="image"><img src="images/cake05.jpg" alt="cake05"></div>
+            <div class="image"><img src="images/cake06.jpg" alt="cake06"></div>
+            <div class="image"><img src="images/cake07.jpg" alt="cake07"></div>
+            <div class="image"><img src="images/cake08.jpg" alt="cake08"></div>
+        </div>
+
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="images/cake.jpg" alt="popup">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.image-container img').forEach(image =>{
+            image.onclick = () =>{
+                document.querySelector('.popup-image').style.display = 'block';
+                document.querySelector('.popup-image img').src = image.getAttribute('src');
+            }
+        });
+
+        document.querySelector('.popup-image span').onclick = () =>{
+           document.querySelector('.popup-image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
